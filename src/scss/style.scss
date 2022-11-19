@@ -1,0 +1,165 @@
+@use "sass:math";
+
+// Подключение миксинов 
+// @import "base/mixins";
+
+// Обнуление и общие параметры
+@import "base/null";
+// Подключение шрирфтов
+// &display=swap - добавить при подключении через плагн
+// Подключить если есть локальные файлы шифтов
+@import "fonts";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400,500,500,600,700);
+//Подключение иконочных шифтов
+// Подключить если есть файл иконочного шрифта
+@import "icons";
+
+// Шрифт по молчанию 
+$fontfamily: "Source Sans Pro";
+$fontSize: rem(18); //где 14(px) размер шрифта по умолчанию из  макета
+// будет миксин который ереедет все в rem
+
+// Основные цвета
+$bgColor: #fff;
+$mainColor: #31343E;
+$colorPink: rgb(222, 143, 158, 0.1);
+
+// НАСТРОЙКИ
+
+// МИнимальная ширина экрана
+$minWidth: 320;
+
+// Ширирна полотна
+$maxWidth: 1920;
+//Ширина огрраничевающего макетта
+$maxWidthContainer: 1100;
+// Общий отссттуп у конейнеа
+// (30) = по 15 ссс двух сторон 0=нет отстуупаа
+$containerPadding: 30;
+
+// Тип адаптива
+//1=отзывчивость (у контейнерровв нет брекпоинтов),
+//2=по бррейк поинтам (меняет шириинуууу контейнерр)
+$responsiveType: 1;
+
+// Шиирина ссрабатания 1-го брекпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+
+$pc: em($containerWidth); //ПК, ноутбукиб гор пплааншеты
+$tablet: em(991.98); //Планшеты, тел горризонтальноо
+$mobile: em(767.98); //Телефоны L
+$mobileSmall: em(479.98); //Телефоны S
+
+
+
+body {
+    font-family: $fontfamily;
+    font-weight: 500;
+    background-color: $bgColor;
+    color: $mainColor;
+
+    // Скрролл заблокиван
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
+    }
+}
+
+// Оболочка
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    //Сайт загужен
+    // .loaded & {}
+
+    //Прижимаем footer
+    >main {
+        flex: 1 1 auto;
+    }
+
+    // Фикс для слайерров
+    >* {
+        min-width: 0;
+    }
+}
+
+// Оганичиающий контейнер
+
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Напримерр hader__cantaier, main_contaierи тд..
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+
+    // отзывчивая
+    [class*="__container"] {
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+
+        @if ($containerPadding>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+        }
+    }
+}
+
+@else {
+
+    //по брейк поинтам
+    [class*="__container"] {
+        margin: 0 auto;
+
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+        }
+
+        @else {
+            @if($containerPadding>0) {
+                padding: 0 rem(mathh.div($containerPadding, 2));
+            }
+        }
+
+        @media (max-width:$pc) {
+            max-width: rem(970);
+        }
+
+        @media(max-width: $tablet) {
+            max-width: rem(750);
+        }
+
+        @media (max-width:$mobile) {
+            min-width: none;
+
+            @if ($containerPadding>0 and $maxWidthContainer>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+    }
+}
+
+// Подключение базоых стилейб шаблоно(заголоков) и вспппомогательныых классов
+//Для поключени .отключения конкетных стилей смотри base.scss
+// @import "base";
+
+//Подключение стилей бщих э лементовв ппрокта
+// @import "common";
+
+// Подключение стилей отдельных блоков
+@import "header";
+@import "main";
+// @import "footer";
+
+// ППодключение отдельныз траниц
+// @import "home";

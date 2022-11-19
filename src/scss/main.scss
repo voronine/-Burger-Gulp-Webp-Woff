@@ -1,0 +1,375 @@
+.content {
+    color: $mainColor;
+    margin: 61px 0px 0px 0px;
+}
+
+
+.content__sale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorPink;
+    height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Yanone Kaffeesatz';
+    color: #DE8F9E;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.content__baner {
+    margin: 70px 0px 0px 0px;
+    width: 100%;
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #DE8F9E;
+    float: left;
+
+}
+
+.baner__h1 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.baner__text {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    line-height: 140%;
+    padding: 10px 0px 30px 0px;
+}
+
+.baner__button {
+    width: 152px;
+    height: 40px;
+    background-color: #8C6F9E;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+}
+
+.container__search {
+    background: rgba(49, 52, 62, 0.07);
+    border-radius: 5px;
+    margin: 30px 0px;
+    padding: 0px 15px;
+    display: flex;
+    width: 100%;
+    height: 113px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search__h {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 140%;
+
+}
+
+.search__cost {
+    margin-left: 35px;
+}
+
+.search__cost>span,
+.search__age>span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+}
+
+.container__search select {
+    width: 261px;
+    height: 48px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 10px -65px 0px 0px;
+}
+
+
+
+.search__button {
+    width: 160px;
+    height: 49px;
+    background: #80D0AD;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 35px 0px 0px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.search__button::before {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+
+
+.select1,
+.select2 {
+    margin: 0 auto;
+    position: relative;
+    width: 261px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    z-index: 1;
+    padding: 15px 0px 0px 0px;
+
+}
+
+.select1.is-active .select__body {
+    display: block;
+}
+
+.select2.is-active2 .select__body2 {
+    display: block;
+}
+
+.select__header,
+.select__header2 {
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+}
+
+.select__header.active {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid $mainColor;
+    border-bottom: 0;
+}
+
+.select__header2.active2 {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid $mainColor;
+    border-bottom: 0;
+}
+
+.select__current,
+.select__current2 {
+    padding: 13px;
+}
+
+.select__icon._icon-select {
+    rotate: 90deg;
+    padding: 0;
+    position: relative;
+    top: 5px;
+}
+
+
+.select__icon {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 47px;
+    margin-left: auto;
+    text-align: center;
+    width: 40px;
+}
+
+.select1 .select__body,
+.select2 .select__body2 {
+    border: 1px solid $mainColor;
+    border-top: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.select__item,
+.select__item2 {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.select__item:hover,
+.select__item2:hover {
+    background-color: rgba(49, 52, 62, 0.07);
+}
+
+.container__gallery {
+    height: 736px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 20px;
+
+
+}
+
+.gallery__card {
+    width: 255px;
+    height: 407px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card__image {
+    flex: 0 0 255px;
+    overflow: hidden;
+}
+
+.card__image img {
+    max-width: 100%;
+    display: block;
+}
+
+.card__button {
+    background: rgba(49, 52, 62, 0.07);
+    border-radius: 5px;
+    flex: 0 0 36px;
+    width: 140px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    justify-content: center;
+    color: #31343E;
+}
+
+.card__button._icon-shopping-bag {
+    font-size: 30;
+}
+
+.card__cost-new {
+    font-weight: 700;
+    padding: 0px 10px 0px 0px;
+}
+
+.card__cost-old {
+    text-decoration: line-through;
+}
+
+.card__stars {
+    display: flex;
+}
+
+.card__stars__stars {
+    color: #F2CAA3;
+    padding: 0px 10px 0px 0px;
+}
+
+.container__search-media {
+    display: none;
+}
+
+@media(max-width:992px) {
+    .container {
+        max-width: 993px;
+        margin: 0 auto;
+        padding: 0px 31px;
+        overflow: hidden;
+    }
+
+    .card__image {
+        flex: 0 0 210px;
+        overflow: hidden;
+    }
+
+    .gallery__card {
+        width: 210px;
+    }
+
+    .container__search {
+        display: none;
+    }
+
+    .container__search-media {
+        display: block;
+    }
+
+    .search-media {
+        width: 100%;
+        height: 56px;
+        background-color: #80D0AD;
+        display: flex;
+        margin: 30px 0px 0px 0px;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        font-family: 'Yanone Kaffeesatz';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 140%;
+        padding: 0px 15px;
+
+    }
+
+
+    .container__gallery {
+        margin: 30px 0px 0px 0px;
+        gap: 40px 30px;
+    }
+}
+
+@media(max-width:1099px) {
+    .card__image {
+        flex: 0 0 210px;
+        overflow: hidden;
+    }
+
+    .gallery__card {
+        width: 210px;
+    }
+
+    .container__gallery {
+        display: flex;
+        justify-content: center;
+        gap: 30px 30px;
+    }
+}
+
+@media(max-width:768px) {
+    .container {
+        max-width: 769px;
+        margin: 0 auto;
+        padding: 0px 39px;
+        overflow: hidden;
+    }
+}
+
+@media(max-width:767px) {
+    .container {
+        max-width: 577px;
+        margin: 0 auto;
+        padding: 0px 32px;
+        overflow: hidden;
+    }
+
+    .card__image {
+        flex: 0 0 241px;
+        overflow: hidden;
+    }
+}
