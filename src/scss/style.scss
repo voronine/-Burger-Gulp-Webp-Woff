@@ -6,17 +6,17 @@
 // Обнуление и общие параметры
 @import "base/null";
 // Подключение шрирфтов
-// &display=swap - добавить при подключении через плагн
+// &display:swap - добавить при подключении через плагн
 // Подключить если есть локальные файлы шифтов
 @import "fonts";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,900&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400,500,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400,500,500,600,700&display=swap);
 //Подключение иконочных шифтов
 // Подключить если есть файл иконочного шрифта
 @import "icons";
 
 // Шрифт по молчанию 
-$fontfamily: "Source Sans Pro";
+$fontfamily: SourceSansPro;
 $fontSize: rem(18); //где 14(px) размер шрифта по умолчанию из  макета
 // будет миксин который ереедет все в rem
 
@@ -33,15 +33,15 @@ $minWidth: 320;
 // Ширирна полотна
 $maxWidth: 1920;
 //Ширина огрраничевающего макетта
-$maxWidthContainer: 1100;
+$maxWidthContainer: 1200;
 // Общий отссттуп у конейнеа
 // (30) = по 15 ссс двух сторон 0=нет отстуупаа
-$containerPadding: 30;
+$containerPadding: 50;
 
 // Тип адаптива
 //1=отзывчивость (у контейнерровв нет брекпоинтов),
 //2=по бррейк поинтам (меняет шириинуууу контейнерр)
-$responsiveType: 1;
+$responsiveType: 2;
 
 // Шиирина ссрабатания 1-го брекпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -62,10 +62,10 @@ body {
     color: $mainColor;
 
     // Скрролл заблокиван
-    .lock & {
-        overflow: hidden;
-        touch-action: none;
-    }
+    // .lock & {
+    //     overflow: hidden;
+    //     touch-action: none;
+    // }
 }
 
 // Оболочка
@@ -159,7 +159,7 @@ body {
 // Подключение стилей отдельных блоков
 @import "header";
 @import "main";
-// @import "footer";
+@import "footer";
 
-// ППодключение отдельныз траниц
+// ППодключение отдельных траниц
 // @import "home";
